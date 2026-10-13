@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+const cors = require('cors')
 
 let notes = [
   {
@@ -29,6 +30,7 @@ const requestLogger = (request, response, next) => {
 
 app.use(express.json())
 app.use(requestLogger)
+app.use(cors())
 
 app.get('/', (request, response) => {
   response.send('<h1>Hello World!</h1>')
@@ -84,6 +86,14 @@ app.post('/api/notes', (request, response) => {
   response.json(note)
 })
 
+app.put('/api/notes/:id', (request, response ) => {
+  const id = request.params.id
+  const note = request.body
+  notes = notes.map(n => n.id === id? note : n)
+
+  response.status(200).json(note)
+})
+
 
 const unknownEndpoint = (request, response) => {
   response.status(404).send({ error: 'unknown endpoint' })
@@ -91,7 +101,7 @@ const unknownEndpoint = (request, response) => {
 
 app.use(unknownEndpoint)
 
-const PORT = 3001
+const PORT = process.env.PORT || 3001
 app.listen(PORT, (error) => {
     if(error) {
         console.error('There was an error', error)
