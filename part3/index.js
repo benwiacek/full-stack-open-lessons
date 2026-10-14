@@ -33,7 +33,7 @@ app.use(requestLogger)
 app.use(cors())
 
 app.get('/', (request, response) => {
-  response.send('<h1>Hello World!</h1>')
+  response.send('<h1>Hello World!</h1><p>Oh putain!</p>')
 })
 
 app.get('/api/notes', (request, response) => {
