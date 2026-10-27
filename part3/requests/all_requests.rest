@@ -4,7 +4,7 @@ GET {{baseURL}}
 
 ###
 
-DELETE {{baseURL}}/6ad2e44a5bca6ac8581d8fa0
+DELETE {{baseURL}}/6ae0b39c7972a34ff7f693a3
 
 ###
 
@@ -12,16 +12,16 @@ POST {{baseURL}}
 Content-Type: application/json
 
 {
-    "content": "New test",
+    "content": "New test Tuesday FINAL",
     "important": true
 }
 
 ###
 
-PUT {{baseURL}}/6ad2e4699da0392ac03ec111
+PUT {{baseURL}}/6ae0b31fc0bc6e6d8be59484
 Content-Type: application/json
 
 {
-    "content": "New test2",
+    "content": "New test Tuesday3",
     "important": false
 }
