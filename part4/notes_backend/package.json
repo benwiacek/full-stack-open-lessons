@@ -1,5 +1,5 @@
 {
-  "name": "part3",
+  "name": "part4",
   "version": "0.0.1",
   "description": "",
   "repository": {
@@ -13,8 +13,8 @@
   "scripts": {
     "start": "node index.js",
     "dev": "node --watch index.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build:ui": "shx rm -rf dist && cd ./phonebook_frontend && npm run build && shx cp -r dist ..",
+    "test": "node --test",
+    "build:ui": "shx rm -rf dist && cd ../phonebook_frontend && npm run build && shx cp -r dist ../phonebook_backend",
     "lint": "eslint .",
     "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push"
   },
